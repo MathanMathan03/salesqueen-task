@@ -1,0 +1,84 @@
+<form id="form" action="">
+  <div class="row">
+    <div class="col-md-12"></div>
+    <div class="col-md-4">
+      <div class="purchasegrp">
+        <label class="purchaseinfo"
+          ><span class="red-asterisk">*</span>&nbsp;Routing code</label
+        >
+        <input
+          type="text"
+          class="form-control purchaseselects"
+          id="customer-name"
+          name="PayAcc"
+        />
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="purchasegrp">
+        <label class="purchaseinfo"
+          ><span class="red-asterisk">*</span>&nbsp;Routing name</label
+        >
+        <input
+          type="text"
+          class="form-control purchaseselects"
+          id="customer-name"
+          name="PayAcc"
+        />
+      </div>
+    </div>
+    </div>
+  </div>
+  <!--summer notes row -->
+  <div class="row mt-2 mb-2">
+    <div class="col">Notes</div>
+  </div>
+  <div class="col">
+    <div class="purchasegrp">
+      <div id="summernote"></div>
+    </div>
+  </div>
+  <!-- hr line -->
+  <hr />
+  <!-- close and save button -->
+  <div class="row">
+    <div class="col-md-12 blkftr bton_alin">
+      <div class="modal-footer taskfooter">
+        <button type="button" class="taskclose1" data-bs-dismiss="modal">
+          CLOSE
+        </button>
+        <div class="button_su">
+          <span class="su_button_circle"> </span>
+          <button type="submit" class="button_su_inner tasksave1 orderclr">
+            <span class="button_text_container"> SAVE </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- summernote script -->
+<script>
+  $("#summernote").summernote({
+    placeholder: "",
+    tabsize: 10,
+    height: 100,
+  });
+</script>
+
+<!-- form validations -->
+<script>
+  $("#form").formValidation({
+    framework: "bootstrap",
+    fields: {
+      PayAcc: {
+        validators: {
+          notEmpty: {
+            message: "This feild is required",
+          },
+        },
+      },
+    },
+  });
+</script>

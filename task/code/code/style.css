@@ -1,0 +1,82 @@
+/* header icon */
+.icon_clr{
+    color: #d8341b ;
+    font-size: 14px;
+    font-weight: 400;
+    font-size: 18px;
+}
+/* add routing button */
+.btn_info{
+    color: #fff;
+    background-color: #03a9f4 !important;
+}
+
+/* hr line */
+.hr_color{
+        margin-top: 15px;
+        border-bottom: 1px solid;
+        color: #d8341b !important;
+        opacity: 1;
+}
+
+/* main content */
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* table title routing code width */
+
+.rcw{
+    width: 400px;
+}
+
+/* pop box * color */
+.red-asterisk{
+    color: red;
+}
+
+/* close button hover */
+.cl_btn:hover{
+   background-color: rgb(234 234 234 / 80%);;
+}
+.cl_btn{
+    background-color: rgb(234 234 234 / 80%);
+    border-radius: 15px;
+}
+
+/* add routing button */
+@media(max-width: 768px){
+.bton{
+    display: inline-block;
+    margin-left: 0 !important;
+    width: 100%;
+    margin-bottom: 5px !important;
+    float: none !important;
+    text-align: left;
+}
+}
+
+/* delete color  */
+.txt_clr{
+    color: red !important;
+}
+.txt_clr:hover{
+    color:black !important;
+}
+
+/* view edit delete align */
+.alin_ved{
+    margin-left: -72px;
+    margin-top: 10px;
+}
+
+@media(max-width: 768px){
+.alin_ved{
+        margin-left: 0px;
+    }
+}
+/* save and close align  */
+.bton_alin{
+    margin-top: -30px;
+}

@@ -1,0 +1,179 @@
+<form id="viewmodal" action="">
+  <div class="row">
+    <!-- <div class="col-md-12"> -->
+    <div class="col-md-6">
+      <div class="purchasegrp">
+        <label class="purchaseinfo"
+          ><span class="red-asterisk">*</span>&nbsp;Operation</label
+        >
+        <input
+          type="text"
+          class="form-control purchaseselects"
+          name="PayAcc"
+          id="customer-name"
+        />
+      </div>
+      <!-- work center name input box -->
+      <div class="purchasegrp">
+        <label for="group" class="purchaseinfo mb-1"
+          ><span class="aster">* </span>Work Center Name</label
+        >
+        <div
+          class="dropdown-with-icon dropdownalignment"
+          style="border-radius: 4px 0px 0px 4px"
+        >
+          <select
+            name="PayAcc"
+            name="group"
+            class="form-control selectpicker"
+            data-live-search="true"
+          >
+            <option value=""></option>
+            <option value="0">Scrap</option>
+            <option value="1">Inventory</option>
+            <option value="2">Melting</option>
+            <option value="3">Processing</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-1">
+      <label class="purchaseinfo">Duration (minutes)</label>
+      <br />
+      <div class="checkbox">
+        <input type="radio" class="form-check-input cbx" />
+        <label>compute bassed on real-time</label>
+      </div>
+
+      <div class="checkbox">
+        <input type="radio" class="form-check-input cbx" checked />
+        <label>Set duration manually</label>
+      </div>
+
+      <div class="purchasegrp">
+        <label class="purchaseinfo">Default Duration (minutes)</label>
+        <input
+          type="text"
+          class="form-control purchaseselects"
+          id="customer-name"
+          placeholder="60"
+          name="PayAcc"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <label class="purchaseinfo">Start next operation</label>
+      <br />
+      <div class="checkbox">
+        <input type="radio" class="form-check-input cbx" checked />
+        <label>Once all products are processed</label>
+      </div>
+
+      <div class="checkbox">
+        <input type="radio" class="form-check-input cbx" />
+        <label>Once some products are processed</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- order -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="purchasegrp">
+        <label class="purchaseinfo"> Order </label>
+        <input
+          type="number"
+          placeholder="0"
+          class="form-control purchaseselects"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="row mt-2 mb-2">
+    <div class="col">Description</div>
+  </div>
+  <div class="col">
+    <div class="purchasegrp">
+      <div id="summernot"></div>
+    </div>
+  </div>
+  <!-- attachment -->
+  <div id="parent1" class="row">
+    <div class="col-md-6 mb-3">
+      <div class="chseexc">
+        <label for="" class="purchaseinfo mb-1">Attachment</label>
+        <div class="input-group d-flex flex-nowrap">
+          <input type="file" class="file_in" />
+          <span class="input-group-addon">
+            <button id="add_btn1" type="button" class="ctctgrnbtn">
+              <i class="fa fa-plus"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- hr line -->
+  <hr class="fileline" />
+  <!-- save and close button -->
+  <div class="row">
+    <div class="col-md-12 blkftr btn_alin">
+      <div class="modal-footer taskfooter">
+        <button type="button" class="taskclose1" data-bs-dismiss="modal">
+          CLOSE
+        </button>
+        <div class="button_su">
+          <span class="su_button_circle"> </span>
+          <button type="submit" class="button_su_inner tasksave1 orderclr">
+            <span class="button_text_container"> SAVE </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</form>
+
+<!-- summernote script -->
+<script>
+  $("#summernot").summernote({
+    placeholder: "",
+    tabsize: 10,
+    height: 100,
+  });
+</script>
+
+<!-- append -->
+<script>
+  $(document).ready(function () {
+    $("#add_btn1").click(function () {
+      $("#parent1").append(
+        '<div id="coldiv" class="col-md-4"><div class="chseexc"><label for="" class="purchaseinfo mb-1">Attachment</label><div class="input-group d-flex flex-nowrap"><input type="file" class="file_in"><span class="input-group-addon"><button id="remove_btn" type="button" class="ctctredbtn ctctgrnbtn"><i class="fa fa-minus"></i></button></span></div></div></div>'
+      );
+    });
+    $(document).on("click", "#remove_btn", function () {
+      $(this).closest("#coldiv").remove();
+    });
+  });
+</script>
+
+<!-- form validations -->
+<script>
+  $("#viewmodal").formValidation({
+    framework: "bootstrap",
+    fields: {
+      PayAcc: {
+        validators: {
+          notEmpty: {
+            message: "This feild is required",
+          },
+        },
+      },
+    },
+  });
+</script>
